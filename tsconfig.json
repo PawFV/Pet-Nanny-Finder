@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "sourceMap": true,
