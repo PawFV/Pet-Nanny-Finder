@@ -12,4 +12,7 @@ for (let i = 0; i < 10; i++) {
   })
 }
 
-fs.writeJSONSync('users.json', users)
+fs.writeFileSync(
+  'src/mocks/users.ts',
+  `export default ${JSON.stringify(users, null, 2)}`
+)
