@@ -2,18 +2,20 @@ interface User {
   id: string
   email: string
   password: string
-  phone?: string
   name: string
-  location: string
-  reputation: number
-  avatar: string
-  chat: Chat
-  reviews: Reviews
+  reputation?: Reputation
+  location?: string
+  phone?: string
+  avatar?: string
+  chat?: Chat
+  reviews?: Reviews
 }
 
 interface Owner extends User {
   pet?: Pet
 }
+
+type Reputation = 0 | 1 | 2 | 3 | 4 | 5
 
 // interface Carer extends User { }
 
@@ -48,4 +50,21 @@ interface Chat {
 interface ChatMessage {
   userId: string
   message: string
+}
+
+declare namespace GraphQL {
+  interface Resolvers {
+    Mutation: {
+      createUser: (parent: any, userInput: UserInput, context: any) => User
+    }
+    Query: {
+      getUsers: (parent: any, userInput: UserInput, context: any) => User[]
+    }
+  }
+
+  interface UserInput {
+    name: string
+    email: string
+    password: string
+  }
 }
