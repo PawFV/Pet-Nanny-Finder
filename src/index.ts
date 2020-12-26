@@ -1,14 +1,9 @@
 /// <reference types="./global" />
-import { ApolloServer } from 'apollo-server-express'
-import express from 'express'
-import { resolvers, typeDefs } from './graphql'
+import config from './config/index'
+import logServer from './utils/log/logServer'
 
-const app = express()
+const { app, PORT, server } = config().dotenv().defaults()
 
-new ApolloServer({ typeDefs, resolvers: resolvers as any }).applyMiddleware({
-  app
-})
+server.applyMiddleware({ app })
 
-app.listen({ port: 3500 }, () =>
-  console.log(`🚀 Server ready at http://localhost:3500/graphql`)
-)
+app.listen({ port: PORT }, () => logServer(PORT))
