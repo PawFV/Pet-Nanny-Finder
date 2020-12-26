@@ -11,6 +11,10 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "typeRoots": ["node_modules/@types", "./src/*.d.ts"]
   },
   "include": ["src/**/*.ts", "config/**/*.ts", "src/TS/db.d.ts"],
