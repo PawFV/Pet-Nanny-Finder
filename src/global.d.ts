@@ -51,20 +51,3 @@ interface ChatMessage {
   userId: string
   message: string
 }
-
-declare namespace GraphQL {
-  interface Resolvers {
-    Mutation: {
-      createUser: (parent: any, userInput: UserInput, context: any) => User
-    }
-    Query: {
-      getUsers: (parent: any, userInput: UserInput, context: any) => User[]
-    }
-  }
-
-  interface UserInput {
-    name: string
-    email: string
-    password: string
-  }
-}
