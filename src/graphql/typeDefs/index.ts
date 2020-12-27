@@ -3,30 +3,35 @@ import { gql } from 'apollo-server-express'
 const typeDefs = gql`
   type Review {
     id: ID!
-    userId: ID!
+    from: ID!
+    to: ID!
     text: String
   }
   type Reviews {
-    given: [Review]
-    received: [Review]
+    given: [Review!]
+    received: [Review!]
   }
-
+  type GeoLocation {
+    latitude: String
+    longitud: String
+  }
   type User {
     id: ID!
     email: String!
     name: String!
     password: String
     phone: String
-    location: String
     reputation: Int
     avatar: String
-    reviews: Reviews
+    reviews: Reviews!
+    location: GeoLocation
   }
 
   type Query {
-    getUsers: [User]
-    getUser(id: ID!): User
+    users: [User]
+    user(id: ID!): User
   }
+
   type Mutation {
     createUser(name: String!, email: String!, password: String!): User
   }
