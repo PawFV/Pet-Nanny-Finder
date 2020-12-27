@@ -1,3 +1,4 @@
 graphql.ts
 concurrently.js
 build
+node_modules
