@@ -31,7 +31,7 @@ function getUserReviews(users: User[], userId: string) {
  * generated, it will recursively call itself until it gets unique existent ID.
  */
 const randomUserId = (users: User[], excludedId?: string) => {
-  log.log('randomUserId -> users', users[randomUserIndex(users)])
+  _log(users[randomUserIndex(users)])
 
   const randomId = users[randomUserIndex(users)].id
   return randomId === excludedId ? randomUserId(users, excludedId) : randomId

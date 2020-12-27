@@ -54,7 +54,7 @@ export type User = {
   phone?: Maybe<Scalars['String']>;
   reputation?: Maybe<Scalars['Int']>;
   avatar?: Maybe<Scalars['String']>;
-  reviews: Reviews;
+  reviews?: Maybe<Reviews>;
   location?: Maybe<GeoLocation>;
 };
 
@@ -269,7 +269,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   phone?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   reputation?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   avatar?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  reviews?: Resolver<ResolversTypes['Reviews'], ParentType, ContextType>;
+  reviews?: Resolver<Maybe<ResolversTypes['Reviews']>, ParentType, ContextType>;
   location?: Resolver<Maybe<ResolversTypes['GeoLocation']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };

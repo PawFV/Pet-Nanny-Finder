@@ -23,7 +23,7 @@ const typeDefs = gql`
     phone: String
     reputation: Int
     avatar: String
-    reviews: Reviews!
+    reviews: Reviews
     location: GeoLocation
   }
 
