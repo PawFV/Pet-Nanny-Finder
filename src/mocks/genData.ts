@@ -1,18 +1,13 @@
-import faker from 'faker'
 import fs from 'fs-extra'
+import generateUsersFlatData from './gen/flatData'
+import getUserReviews from './gen/userReviews'
 
-const users: User[] = []
-
-for (let i = 0; i < 10; i++) {
-  users.push({
-    id: faker.random.uuid(),
-    email: faker.internet.email(),
-    name: faker.internet.userName(),
-    password: faker.internet.password()
-  })
+function populateWithUserData() {
+  const users = generateUsersFlatData()
+  users.forEach(user => (user.reviews = getUserReviews(users, user.id)))
+  return users
 }
 
-fs.writeFileSync(
-  'src/mocks/users.ts',
-  `export default ${JSON.stringify(users, null, 2)}`
-)
+const usersData = populateWithUserData()
+
+fs.writeJsonSync('./src/database/users.json', usersData, { spaces: 2 })
