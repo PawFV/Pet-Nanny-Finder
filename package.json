@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "dev": "concurrently --kill-others \"nodemon\" \"npm run codegen:ts-gql --watch\" --names '.,codegen' --prefix-colors 'green,blue'",
+    "dev": "concurrently --kill-others \"nodemon\" \"npm run codegen:ts-gql\" --names '.,codegen' --prefix-colors 'green,blue'",
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./ -o ./build",
-    "gen:user-data": "tsc && node build/src/mocks/genData",
-    "codegen:ts-gql": "graphql-codegen -e --config codegen.yml --watch \"src/**/*.ts\""
+    "gen:user-data": "ts-node ./src/mocks/genData",
+    "codegen:ts-gql": "graphql-codegen -e --config codegen.yml --watch src/**/*.ts"
   },
   "dependencies": {
     "@graphql-codegen/typescript-mongodb": "^1.17.9",
@@ -22,8 +22,10 @@
     "graphql-tools": "^7.0.2",
     "lowdb": "^1.0.0",
     "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
     "mongodb": "^3.6.3",
     "nodemon": "^2.0.6",
+    "random-avatar-generator": "^2.0.0",
     "tsconfig-paths": "^3.9.0",
     "tscpaths": "0.0.9"
   },
