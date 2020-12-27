@@ -18,6 +18,12 @@ const Mutation: MutationResolvers = {
       password,
       reviews: {}
     }
+  },
+  createPet: (_, { pet }) => {
+    return {
+      id: '11111',
+      ...pet
+    }
   }
 }
 

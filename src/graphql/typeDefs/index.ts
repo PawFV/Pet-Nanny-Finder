@@ -25,6 +25,25 @@ const typeDefs = gql`
     avatar: String
     reviews: Reviews
     location: GeoLocation
+    pet: Pet
+  }
+  type Pet {
+    id: ID!
+    owner: ID!
+    age: Int!
+    size: Int!
+    type: String!
+    description: String!
+    image: String!
+  }
+
+  input PetInput {
+    owner: ID!
+    age: Int!
+    size: Int!
+    type: String!
+    description: String!
+    image: String!
   }
 
   type Query {
@@ -34,6 +53,7 @@ const typeDefs = gql`
 
   type Mutation {
     createUser(name: String!, email: String!, password: String!): User
+    createPet(pet: PetInput): Pet
   }
 `
 

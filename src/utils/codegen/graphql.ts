@@ -56,6 +56,27 @@ export type User = {
   avatar?: Maybe<Scalars['String']>;
   reviews?: Maybe<Reviews>;
   location?: Maybe<GeoLocation>;
+  pet?: Maybe<Pet>;
+};
+
+export type Pet = {
+  __typename?: 'Pet';
+  id: Scalars['ID'];
+  owner: Scalars['ID'];
+  age: Scalars['Int'];
+  size: Scalars['Int'];
+  type: Scalars['String'];
+  description: Scalars['String'];
+  image: Scalars['String'];
+};
+
+export type PetInput = {
+  owner: Scalars['ID'];
+  age: Scalars['Int'];
+  size: Scalars['Int'];
+  type: Scalars['String'];
+  description: Scalars['String'];
+  image: Scalars['String'];
 };
 
 export type Query = {
@@ -72,6 +93,7 @@ export type QueryUserArgs = {
 export type Mutation = {
   __typename?: 'Mutation';
   createUser?: Maybe<User>;
+  createPet?: Maybe<Pet>;
 };
 
 
@@ -79,6 +101,11 @@ export type MutationCreateUserArgs = {
   name: Scalars['String'];
   email: Scalars['String'];
   password: Scalars['String'];
+};
+
+
+export type MutationCreatePetArgs = {
+  pet?: Maybe<PetInput>;
 };
 
 export enum CacheControlScope {
@@ -177,6 +204,8 @@ export type ResolversTypes = {
   GeoLocation: ResolverTypeWrapper<GeoLocation>;
   User: ResolverTypeWrapper<User>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Pet: ResolverTypeWrapper<Pet>;
+  PetInput: PetInput;
   Query: ResolverTypeWrapper<{}>;
   Mutation: ResolverTypeWrapper<{}>;
   CacheControlScope: CacheControlScope;
@@ -194,6 +223,8 @@ export type ResolversParentTypes = {
   GeoLocation: GeoLocation;
   User: User;
   Int: Scalars['Int'];
+  Pet: Pet;
+  PetInput: PetInput;
   Query: {};
   Mutation: {};
   Upload: Scalars['Upload'];
@@ -271,6 +302,18 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   avatar?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   reviews?: Resolver<Maybe<ResolversTypes['Reviews']>, ParentType, ContextType>;
   location?: Resolver<Maybe<ResolversTypes['GeoLocation']>, ParentType, ContextType>;
+  pet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pet'] = ResolversParentTypes['Pet']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  owner?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  size?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  image?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -281,6 +324,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'name' | 'email' | 'password'>>;
+  createPet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<MutationCreatePetArgs, never>>;
 };
 
 export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
@@ -292,6 +336,7 @@ export type Resolvers<ContextType = any> = {
   Reviews?: ReviewsResolvers<ContextType>;
   GeoLocation?: GeoLocationResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
+  Pet?: PetResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Upload?: GraphQLScalarType;
