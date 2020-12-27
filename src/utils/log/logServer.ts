@@ -3,10 +3,6 @@ const { yellow, cyan } = chalkColors()
 
 export default function logServer(port: string | number) {
   console.log(
-    cyan(
-      `⚡ [Apollo Server] ready at -> ${yellow(
-        `http://localhost:${port}/graphql`
-      )}`
-    )
+    cyan(`⚡ [Apollo Server] ready at -> ${yellow(`http://localhost:${port}/graphql`)}`)
   )
 }
