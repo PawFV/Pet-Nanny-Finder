@@ -1,9 +1,12 @@
-import users from '@/mocks/users'
-import { MutationResolvers, QueryResolvers } from '@/utils/codegen/graphql'
+import { MutationResolvers, QueryResolvers, Resolvers } from '@/utils/codegen/graphql'
+import users from '../../database/users.json'
 
 const Query: QueryResolvers = {
-  getUsers: () => users,
-  getUser: (_, { id }) => users.find(user => user.id === id)
+  users: () => users,
+  user: (_, { id }) => {
+    const user = users.find(u => u.id === id)
+    return user
+  }
 }
 
 const Mutation: MutationResolvers = {
@@ -12,12 +15,13 @@ const Mutation: MutationResolvers = {
       id: '123',
       name,
       email,
-      password
+      password,
+      reviews: {}
     }
   }
 }
 
-const resolvers = {
+const resolvers: Resolvers = {
   Query,
   Mutation
 }
