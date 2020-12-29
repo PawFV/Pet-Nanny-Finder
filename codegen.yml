@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'http://localhost:3500/graphql'
+schema: './src/graphql/typeDefs/index.ts'
 generates:
   src/utils/codegen/graphql.ts:
     plugins:
