@@ -27,6 +27,7 @@ const typeDefs = gql`
     location: GeoLocation
     pet: Pet
   }
+
   type Pet {
     id: ID!
     owner: ID!
@@ -49,11 +50,14 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(id: ID!): User
+    pets: [Pet]
+    pet(id: ID!): Pet
   }
 
   type Mutation {
     createUser(name: String!, email: String!, password: String!): User
     createPet(pet: PetInput): Pet
+    marica(name: String!): String
   }
 `
 

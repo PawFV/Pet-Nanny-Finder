@@ -1,4 +1,4 @@
-import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
+import { GraphQLResolveInfo } from 'graphql';
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -12,10 +12,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
-  Upload: any;
 };
-
 
 
 
@@ -83,6 +80,8 @@ export type Query = {
   __typename?: 'Query';
   users?: Maybe<Array<Maybe<User>>>;
   user?: Maybe<User>;
+  pets?: Maybe<Array<Maybe<Pet>>>;
+  pet?: Maybe<Pet>;
 };
 
 
@@ -90,10 +89,16 @@ export type QueryUserArgs = {
   id: Scalars['ID'];
 };
 
+
+export type QueryPetArgs = {
+  id: Scalars['ID'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createUser?: Maybe<User>;
   createPet?: Maybe<Pet>;
+  marica?: Maybe<Scalars['String']>;
 };
 
 
@@ -108,11 +113,10 @@ export type MutationCreatePetArgs = {
   pet?: Maybe<PetInput>;
 };
 
-export enum CacheControlScope {
-  Public = 'PUBLIC',
-  Private = 'PRIVATE'
-}
 
+export type MutationMaricaArgs = {
+  name: Scalars['String'];
+};
 
 export type AdditionalEntityFields = {
   path?: Maybe<Scalars['String']>;
@@ -208,8 +212,6 @@ export type ResolversTypes = {
   PetInput: PetInput;
   Query: ResolverTypeWrapper<{}>;
   Mutation: ResolverTypeWrapper<{}>;
-  CacheControlScope: CacheControlScope;
-  Upload: ResolverTypeWrapper<Scalars['Upload']>;
   AdditionalEntityFields: AdditionalEntityFields;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
@@ -227,15 +229,9 @@ export type ResolversParentTypes = {
   PetInput: PetInput;
   Query: {};
   Mutation: {};
-  Upload: Scalars['Upload'];
   AdditionalEntityFields: AdditionalEntityFields;
   Boolean: Scalars['Boolean'];
 };
-
-export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
-  scope?: Maybe<CacheControlScope>; };
-
-export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type UnionDirectiveArgs = {   discriminatorField?: Maybe<Scalars['String']>;
   additionalFields?: Maybe<Array<Maybe<AdditionalEntityFields>>>; };
@@ -320,16 +316,15 @@ export type PetResolvers<ContextType = any, ParentType extends ResolversParentTy
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
   user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryUserArgs, 'id'>>;
+  pets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Pet']>>>, ParentType, ContextType>;
+  pet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<QueryPetArgs, 'id'>>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'name' | 'email' | 'password'>>;
   createPet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<MutationCreatePetArgs, never>>;
+  marica?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationMaricaArgs, 'name'>>;
 };
-
-export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
-  name: 'Upload';
-}
 
 export type Resolvers<ContextType = any> = {
   Review?: ReviewResolvers<ContextType>;
@@ -339,7 +334,6 @@ export type Resolvers<ContextType = any> = {
   Pet?: PetResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
-  Upload?: GraphQLScalarType;
 };
 
 
@@ -349,7 +343,6 @@ export type Resolvers<ContextType = any> = {
  */
 export type IResolvers<ContextType = any> = Resolvers<ContextType>;
 export type DirectiveResolvers<ContextType = any> = {
-  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>;
   union?: UnionDirectiveResolver<any, any, ContextType>;
   abstractEntity?: AbstractEntityDirectiveResolver<any, any, ContextType>;
   entity?: EntityDirectiveResolver<any, any, ContextType>;
