@@ -7,8 +7,7 @@
     "start": "nodemon",
     "dev": "concurrently --kill-others \"nodemon\" \"npm run codegen:ts-gql\" --names '.,codegen' --prefix-colors 'green,blue'",
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./ -o ./build",
-    "gen:user-data": "ts-node ./src/mocks/genData",
-    "gen:pet-data": "ts-node ./src/mocks/gen/petData",
+    "gen:mock-data": "ts-node ./src/mocks/genData",
     "codegen:ts-gql": "graphql-codegen -e -w ./src/graphql/typeDefs/index.ts"
   },
   "dependencies": {
