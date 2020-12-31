@@ -1,26 +1,27 @@
-import { Reviews, User } from '@/utils/codegen/graphql'
+import { User } from '@/utils/codegen/graphql'
 import { lorem, random } from 'faker'
+import { Review } from '../../utils/codegen/graphql'
 
-function getUserReviews(users: User[], userId: string) {
-  const reviews: Reviews = {
-    given: [],
-    received: []
-  }
+function getUserReviews(users: User[]) {
+  const reviews: Review[] = []
 
-  for (let i = 0; i < 3; i++) {
-    reviews.given.push({
-      id: random.uuid(),
-      from: userId,
-      to: randomUserId(users, userId),
-      text: lorem.paragraph(2)
-    })
-    reviews.received.push({
-      id: random.uuid(),
-      from: randomUserId(users, userId), // TODO: Put random real stored usersID.
-      to: userId,
-      text: lorem.paragraph(2)
-    })
-  }
+  users.forEach(user => {
+    for (let i = 0; i < 3; i++) {
+      reviews.push({
+        id: random.uuid(),
+        from: user.id,
+        to: randomUserId(users, user.id),
+        text: lorem.paragraph(2)
+      })
+      reviews.push({
+        id: random.uuid(),
+        from: randomUserId(users, user.id),
+        to: user.id,
+        text: lorem.paragraph(2)
+      })
+    }
+  })
+
   return reviews
 }
 
@@ -31,8 +32,6 @@ function getUserReviews(users: User[], userId: string) {
  * generated, it will recursively call itself until it gets unique existent ID.
  */
 const randomUserId = (users: User[], excludedId?: string) => {
-  _log(users[randomUserIndex(users)])
-
   const randomId = users[randomUserIndex(users)].id
   return randomId === excludedId ? randomUserId(users, excludedId) : randomId
 }

@@ -1,15 +1,14 @@
 import { random } from 'faker'
-import { writeJsonSync } from 'fs-extra'
 import { AvatarGenerator } from 'random-avatar-generator'
-import users from '../../database/users.json'
-import { Pet } from '../../utils/codegen/graphql'
+import { Pet, User } from '../../utils/codegen/graphql'
 const avatar = new AvatarGenerator()
 
-function populateWithPetData() {
+export default (users: User[]) => {
   const pets: Pet[] = []
   users.forEach(user => {
     pets.push({
       id: random.uuid(),
+      name: random.word(),
       ownerId: user.id,
       description: random.words(5),
       image: avatar.generateRandomAvatar(),
@@ -20,5 +19,3 @@ function populateWithPetData() {
   })
   return pets
 }
-
-writeJsonSync('./src/database/pets.json', populateWithPetData())

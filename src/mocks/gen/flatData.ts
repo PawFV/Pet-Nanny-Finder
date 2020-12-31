@@ -5,6 +5,7 @@ const avatar = new AvatarGenerator()
 
 function generateUsersFlatData() {
   const users: User[] = []
+
   for (let i = 0; i < 10; i++) {
     const id = random.uuid()
     users.push({
@@ -21,6 +22,7 @@ function generateUsersFlatData() {
       }
     })
   }
+
   return users
 }
 
