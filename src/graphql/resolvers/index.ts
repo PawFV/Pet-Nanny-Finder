@@ -1,5 +1,6 @@
 import { MutationResolvers, QueryResolvers, Resolvers } from '@/utils/codegen/graphql'
 import pets from '../../database/pets.json'
+import reviews from '../../database/reviews.json'
 import users from '../../database/users.json'
 
 const Query: QueryResolvers = {
@@ -8,7 +9,9 @@ const Query: QueryResolvers = {
     const user = users.find(u => u.id === id)
     return user
   },
-  pets: () => pets
+  pets: () => pets,
+  review: (_, { id }) => reviews.find(r => id === r.id),
+  reviews: () => reviews
 }
 
 const Mutation: MutationResolvers = {
@@ -26,7 +29,12 @@ const Mutation: MutationResolvers = {
 
 const resolvers: Resolvers = {
   User: {
-    pet: parent => pets.find(pet => pet.ownerId === parent.id)
+    pet: parent => pets.filter(pet => pet.ownerId === parent.id),
+    givenReviews: parent => reviews.filter(r => r.from === parent.id),
+    receivedReviews: parent => reviews.filter(r => r.to === parent.id)
+  },
+  Pet: {
+    owner: parent => users.find(user => user.id === parent.ownerId)
   },
   Query,
   Mutation
