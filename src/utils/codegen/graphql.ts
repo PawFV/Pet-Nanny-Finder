@@ -22,11 +22,18 @@ export type Scalars = {
 
 
 
+export type Destinies = {
+  __typename?: 'Destinies';
+  from?: Maybe<User>;
+  to?: Maybe<User>;
+};
+
 export type Review = {
   __typename?: 'Review';
   id: Scalars['ID'];
   from: Scalars['ID'];
   to: Scalars['ID'];
+  users?: Maybe<Destinies>;
   text?: Maybe<Scalars['String']>;
 };
 
@@ -193,6 +200,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  Destinies: ResolverTypeWrapper<Destinies>;
   Review: ResolverTypeWrapper<Review>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
@@ -209,6 +217,7 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  Destinies: Destinies;
   Review: Review;
   ID: Scalars['ID'];
   String: Scalars['String'];
@@ -258,10 +267,17 @@ export type MapDirectiveArgs = {   path: Scalars['String']; };
 
 export type MapDirectiveResolver<Result, Parent, ContextType = any, Args = MapDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
+export type DestiniesResolvers<ContextType = any, ParentType extends ResolversParentTypes['Destinies'] = ResolversParentTypes['Destinies']> = {
+  from?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  to?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type ReviewResolvers<ContextType = any, ParentType extends ResolversParentTypes['Review'] = ResolversParentTypes['Review']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   from?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   to?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  users?: Resolver<Maybe<ResolversTypes['Destinies']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -314,6 +330,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type Resolvers<ContextType = any> = {
+  Destinies?: DestiniesResolvers<ContextType>;
   Review?: ReviewResolvers<ContextType>;
   GeoLocation?: GeoLocationResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
