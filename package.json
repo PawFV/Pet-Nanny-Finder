@@ -9,7 +9,7 @@
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./ -o ./build",
     "gen:user-data": "ts-node ./src/mocks/genData",
     "gen:pet-data": "ts-node ./src/mocks/gen/petData",
-    "codegen:ts-gql": "graphql-codegen -w ./src/graphql/typeDefs/index.ts"
+    "codegen:ts-gql": "graphql-codegen -e -w ./src/graphql/typeDefs/index.ts"
   },
   "dependencies": {
     "@graphql-codegen/typescript-mongodb": "^1.17.9",

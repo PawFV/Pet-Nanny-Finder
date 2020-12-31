@@ -92,7 +92,6 @@ export type Mutation = {
   __typename?: 'Mutation';
   createUser?: Maybe<User>;
   createPet?: Maybe<Pet>;
-  marica?: Maybe<Scalars['String']>;
 };
 
 
@@ -105,11 +104,6 @@ export type MutationCreateUserArgs = {
 
 export type MutationCreatePetArgs = {
   pet?: Maybe<PetInput>;
-};
-
-
-export type MutationMaricaArgs = {
-  name: Scalars['String'];
 };
 
 export type AdditionalEntityFields = {
@@ -316,7 +310,6 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'name' | 'email' | 'password'>>;
   createPet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<MutationCreatePetArgs, never>>;
-  marica?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationMaricaArgs, 'name'>>;
 };
 
 export type Resolvers<ContextType = any> = {

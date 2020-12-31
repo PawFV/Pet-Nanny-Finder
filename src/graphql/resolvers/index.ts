@@ -26,7 +26,7 @@ const Mutation: MutationResolvers = {
 
 const resolvers: Resolvers = {
   User: {
-    pet: parent => pets.find(pet => pet.id === parent.id)
+    pet: parent => pets.find(pet => pet.ownerId === parent.id)
   },
   Query,
   Mutation

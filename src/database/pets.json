@@ -1,1 +1,92 @@
-[{"id":"3f30919b-2655-4879-9cbc-6fb9d3810394","ownerId":"123","age":8,"description":"IB COM optical override lime","image":"https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelRed&clotheType=ShirtCrewNeck&eyeType=Cry&eyebrowType=FlatNatural&facialHairColor=Brown&facialHairType=MoustacheFancy&hairColor=Red&hatColor=Heather&mouthType=Vomit&skinColor=Brown&topType=WinterHat1","size":60,"type":"dog"},{"id":"59ed27b4-aaf4-4e12-9649-85e315277ffe","ownerId":"123","age":3,"description":"green SSL holistic monitor Lempira","image":"https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=Blue03&clotheType=GraphicShirt&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&facialHairColor=Auburn&facialHairType=MoustacheMagnum&hairColor=SilverGray&hatColor=Gray02&mouthType=Eating&skinColor=Black&topType=LongHairFro","size":50,"type":"dog"},{"id":"f71070cc-6ca7-4b07-a3af-fbf941ed3afb","ownerId":"123","age":8,"description":"Cambridgeshire Berkshire Associate Horizontal Director","image":"https://avataaars.io/?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=White&clotheType=ShirtVNeck&eyeType=Wink&eyebrowType=RaisedExcitedNatural&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Auburn&hatColor=Blue01&mouthType=Disbelief&skinColor=DarkBrown&topType=LongHairCurvy","size":52,"type":"dog"},{"id":"27a27dba-49db-458c-8dc5-c466dd9d647a","ownerId":"123","age":3,"description":"invoice Chair International red convergence","image":"https://avataaars.io/?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Gray01&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=AngryNatural&facialHairColor=Platinum&facialHairType=BeardLight&hairColor=BlondeGolden&hatColor=PastelOrange&mouthType=ScreamOpen&skinColor=Tanned&topType=NoHair","size":18,"type":"dog"},{"id":"0218886c-2bf1-4861-a61e-9f71f3c9cdcf","ownerId":"123","age":2,"description":"secondary syndicate Metrics Analyst structure","image":"https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=Heather&clotheType=Hoodie&eyeType=Hearts&eyebrowType=SadConcernedNatural&facialHairColor=BrownDark&facialHairType=BeardLight&hairColor=Red&hatColor=Blue01&mouthType=Smile&skinColor=Brown&topType=LongHairCurvy","size":42,"type":"dog"},{"id":"e3213ede-cd71-4b73-bae3-520bd87fd318","ownerId":"123","age":6,"description":"Wooden Orchestrator bypass SMTP Supervisor","image":"https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=Blue02&clotheType=Overall&eyeType=Squint&eyebrowType=DefaultNatural&facialHairColor=Brown&facialHairType=MoustacheMagnum&hairColor=BlondeGolden&hatColor=Blue01&mouthType=Serious&skinColor=Tanned&topType=LongHairBun","size":41,"type":"dog"},{"id":"faea06dc-f1ba-46d4-a002-20916f9354d0","ownerId":"123","age":10,"description":"benchmark Fields Dynamic Communications Loan","image":"https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=Gray01&clotheType=ShirtCrewNeck&eyeType=Side&eyebrowType=RaisedExcitedNatural&facialHairColor=Red&facialHairType=Blank&hairColor=BrownDark&hatColor=PastelYellow&mouthType=ScreamOpen&skinColor=Yellow&topType=LongHairFroBand","size":56,"type":"dog"},{"id":"c3ba4c00-da93-4a39-a166-57c5b2374265","ownerId":"123","age":7,"description":"Awesome program Mongolia Money Licensed","image":"https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelRed&clotheType=BlazerShirt&eyeType=Dizzy&eyebrowType=UpDownNatural&facialHairColor=Black&facialHairType=BeardLight&hairColor=PastelPink&hatColor=PastelRed&mouthType=Serious&skinColor=Pale&topType=ShortHairDreads02","size":15,"type":"dog"},{"id":"158d1d08-d17a-452b-adda-83dccac97d64","ownerId":"123","age":4,"description":"bandwidth incubate Human Electronics withdrawal","image":"https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=ShirtCrewNeck&eyeType=Hearts&eyebrowType=SadConcernedNatural&facialHairColor=Red&facialHairType=MoustacheMagnum&hairColor=PastelPink&hatColor=Blue01&mouthType=Vomit&skinColor=Light&topType=NoHair","size":12,"type":"dog"},{"id":"62603fc2-2438-4ff8-a2ad-f3cda42e6e45","ownerId":"123","age":7,"description":"web-readiness demand-driven Strategist pixel repurpose","image":"https://avataaars.io/?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray01&clotheType=CollarSweater&eyeType=WinkWacky&eyebrowType=RaisedExcitedNatural&facialHairColor=Black&facialHairType=BeardMedium&hairColor=Blonde&hatColor=PastelRed&mouthType=Vomit&skinColor=Yellow&topType=LongHairBun","size":48,"type":"dog"}]
+[
+  {
+    "id": "1cdd3377-627c-42a2-a450-ebb00cf96c18",
+    "ownerId": "4db21263-8dd0-4f0e-878b-03c0c2c019da",
+    "description": "Music Lead e-commerce Canada program",
+    "image": "https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=Gray01&clotheType=Hoodie&eyeType=Dizzy&eyebrowType=DefaultNatural&facialHairColor=Auburn&facialHairType=BeardMagestic&hairColor=Blonde&hatColor=Pink&mouthType=Tongue&skinColor=Brown&topType=Eyepatch",
+    "type": "dog",
+    "age": 9,
+    "size": 36
+  },
+  {
+    "id": "bdd5af13-f23d-4917-8812-4c39d2bb89a5",
+    "ownerId": "fb9e04ea-230d-45e5-94d7-38c92522e25f",
+    "description": "Cotton human-resource markets collaborative Borders",
+    "image": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=AngryNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Auburn&hatColor=PastelYellow&mouthType=Vomit&skinColor=Yellow&topType=WinterHat4",
+    "type": "dog",
+    "age": 8,
+    "size": 31
+  },
+  {
+    "id": "9a2bd870-6f97-4591-87aa-91f421fc97b1",
+    "ownerId": "21f468ea-f23c-4c24-b855-683f5ed69ba4",
+    "description": "Senior Licensed Assurance New CSS",
+    "image": "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheColor=Red&clotheType=GraphicShirt&eyeType=WinkWacky&eyebrowType=FlatNatural&facialHairColor=Black&facialHairType=BeardMagestic&hairColor=SilverGray&hatColor=Blue03&mouthType=Twinkle&skinColor=Tanned&topType=WinterHat2",
+    "type": "dog",
+    "age": 9,
+    "size": 12
+  },
+  {
+    "id": "d78adc95-e80d-4de7-a48d-e5bec0b5404d",
+    "ownerId": "f2d03a91-9702-41b8-88ce-5d8de0cb2504",
+    "description": "Oregon Licensed Corporate Dinar Wyoming",
+    "image": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=PastelRed&clotheType=ShirtScoopNeck&eyeType=Close&eyebrowType=Angry&facialHairColor=Red&facialHairType=MoustacheMagnum&hairColor=BrownDark&hatColor=PastelGreen&mouthType=Concerned&skinColor=Brown&topType=LongHairNotTooLong",
+    "type": "dog",
+    "age": 7,
+    "size": 46
+  },
+  {
+    "id": "46b99d08-c23e-41ff-a972-eff231d68a03",
+    "ownerId": "d4b5f5a9-e16f-48fd-975d-d630f5906063",
+    "description": "Open-source user-centric schemas Sleek feed",
+    "image": "https://avataaars.io/?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelRed&clotheType=BlazerSweater&eyeType=Wink&eyebrowType=FlatNatural&facialHairColor=Auburn&facialHairType=MoustacheFancy&hairColor=Auburn&hatColor=PastelRed&mouthType=ScreamOpen&skinColor=DarkBrown&topType=ShortHairFrizzle",
+    "type": "dog",
+    "age": 8,
+    "size": 38
+  },
+  {
+    "id": "2e7fc636-3860-47c1-94d0-b47b38dd84c6",
+    "ownerId": "05a31220-6153-4308-8094-f8d198bc5d85",
+    "description": "grey Montserrat Illinois interface Accounts",
+    "image": "https://avataaars.io/?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelBlue&clotheType=Hoodie&eyeType=Default&eyebrowType=AngryNatural&facialHairColor=Platinum&facialHairType=MoustacheFancy&hairColor=SilverGray&hatColor=PastelRed&mouthType=Serious&skinColor=Brown&topType=WinterHat3",
+    "type": "dog",
+    "age": 3,
+    "size": 21
+  },
+  {
+    "id": "dc36a971-04d2-41c5-aa49-554480d53b8e",
+    "ownerId": "e81285b4-c747-40a0-a819-9a8d1d64a17d",
+    "description": "infomediaries panel Forks Mills viral",
+    "image": "https://avataaars.io/?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Blue01&clotheType=CollarSweater&eyeType=WinkWacky&eyebrowType=RaisedExcitedNatural&facialHairColor=Platinum&facialHairType=BeardMagestic&hairColor=Auburn&hatColor=PastelGreen&mouthType=Grimace&skinColor=DarkBrown&topType=Hijab",
+    "type": "dog",
+    "age": 7,
+    "size": 32
+  },
+  {
+    "id": "45a5e49a-2f9b-47ba-b095-0fc674dfad1f",
+    "ownerId": "e423b3d8-d6cd-4bf0-8786-021fd809a55a",
+    "description": "deposit CSS Berkshire Cotton users",
+    "image": "https://avataaars.io/?accessoriesType=Wayfarers&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=ShirtCrewNeck&eyeType=Hearts&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&hairColor=Brown&hatColor=Black&mouthType=Serious&skinColor=Light&topType=LongHairStraight2",
+    "type": "dog",
+    "age": 9,
+    "size": 26
+  },
+  {
+    "id": "d283d225-211f-49fd-a64b-7a21bcf9bd11",
+    "ownerId": "da9dab2a-f7ba-48eb-8483-33f59a5acf70",
+    "description": "JSON iterate grey copying Configuration",
+    "image": "https://avataaars.io/?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtVNeck&eyeType=Happy&eyebrowType=RaisedExcited&facialHairColor=BlondeGolden&facialHairType=Blank&hairColor=BlondeGolden&hatColor=Pink&mouthType=Concerned&skinColor=DarkBrown&topType=LongHairStraight2",
+    "type": "dog",
+    "age": 8,
+    "size": 13
+  },
+  {
+    "id": "8b03e443-288e-4287-935c-7afa79d8b9f5",
+    "ownerId": "e0ee8c0c-aa59-4900-acd7-c123f69bdfef",
+    "description": "Pennsylvania Pike proactive primary orchid",
+    "image": "https://avataaars.io/?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Black&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=RaisedExcitedNatural&facialHairColor=Auburn&facialHairType=MoustacheFancy&hairColor=Blonde&hatColor=Blue03&mouthType=Sad&skinColor=Light&topType=LongHairFro",
+    "type": "dog",
+    "age": 4,
+    "size": 44
+  }
+]
