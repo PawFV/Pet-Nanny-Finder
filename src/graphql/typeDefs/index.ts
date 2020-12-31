@@ -7,10 +7,7 @@ const typeDefs = gql`
     to: ID!
     text: String
   }
-  type Reviews {
-    given: [Review!]
-    received: [Review!]
-  }
+
   type GeoLocation {
     latitude: String
     longitud: String
@@ -23,14 +20,17 @@ const typeDefs = gql`
     phone: String
     reputation: Int
     avatar: String
-    reviews: Reviews
+    givenReviews: [Review!]
+    receivedReviews: [Review!]
+    pet: [Pet!]
     location: GeoLocation
-    pet: Pet
   }
 
   type Pet {
     id: ID!
     ownerId: ID!
+    owner: User
+    name: String!
     age: Int!
     size: Int!
     type: String!
@@ -51,6 +51,8 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     pets: [Pet]
+    reviews: [Review!]
+    review(id: ID!): Review!
   }
 
   type Mutation {
