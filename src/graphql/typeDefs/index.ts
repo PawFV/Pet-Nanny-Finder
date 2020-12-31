@@ -30,7 +30,7 @@ const typeDefs = gql`
 
   type Pet {
     id: ID!
-    owner: ID!
+    ownerId: ID!
     age: Int!
     size: Int!
     type: String!
@@ -51,13 +51,11 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     pets: [Pet]
-    pet(id: ID!): Pet
   }
 
   type Mutation {
     createUser(name: String!, email: String!, password: String!): User
     createPet(pet: PetInput): Pet
-    marica(name: String!): String
   }
 `
 

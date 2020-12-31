@@ -59,7 +59,7 @@ export type User = {
 export type Pet = {
   __typename?: 'Pet';
   id: Scalars['ID'];
-  owner: Scalars['ID'];
+  ownerId: Scalars['ID'];
   age: Scalars['Int'];
   size: Scalars['Int'];
   type: Scalars['String'];
@@ -81,16 +81,10 @@ export type Query = {
   users?: Maybe<Array<Maybe<User>>>;
   user?: Maybe<User>;
   pets?: Maybe<Array<Maybe<Pet>>>;
-  pet?: Maybe<Pet>;
 };
 
 
 export type QueryUserArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryPetArgs = {
   id: Scalars['ID'];
 };
 
@@ -304,7 +298,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 
 export type PetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pet'] = ResolversParentTypes['Pet']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  owner?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  ownerId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   size?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -317,7 +311,6 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
   user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryUserArgs, 'id'>>;
   pets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Pet']>>>, ParentType, ContextType>;
-  pet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<QueryPetArgs, 'id'>>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {

@@ -22,6 +22,7 @@
     "graphql": "^15.4.0",
     "graphql-config": "^3.2.0",
     "graphql-tools": "^7.0.2",
+    "lodash": "^4.17.20",
     "lowdb": "^1.0.0",
     "module-alias": "^2.2.2",
     "moment": "^2.29.1",

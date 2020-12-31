@@ -7,15 +7,15 @@ const avatar = new AvatarGenerator()
 
 function populateWithPetData() {
   const pets: Pet[] = []
-  users.forEach(() => {
+  users.forEach(user => {
     pets.push({
       id: random.uuid(),
-      age: Math.round(Math.random() * 10),
+      ownerId: user.id,
       description: random.words(5),
       image: avatar.generateRandomAvatar(),
-      owner: '123',
-      size: Math.round(Math.random() * 50 + 10),
-      type: 'dog'
+      type: 'dog',
+      age: Math.round(Math.random() * 10),
+      size: Math.round(Math.random() * 50 + 10)
     })
   })
   return pets
