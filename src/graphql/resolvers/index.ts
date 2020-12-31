@@ -1,13 +1,14 @@
 import { MutationResolvers, QueryResolvers, Resolvers } from '@/utils/codegen/graphql'
+import { filter, find } from 'lodash'
 import pets from '../../database/pets.json'
 import reviews from '../../database/reviews.json'
 import users from '../../database/users.json'
 
 const Query: QueryResolvers = {
   users: () => users,
-  user: (_, { id }) => users.find(u => u.id === id),
+  user: (_, { id }) => find(users, { id }),
   pets: () => pets,
-  review: (_, { id }) => reviews.find(review => id === review.id),
+  review: (_, { id }) => find(reviews, { id }),
   reviews: () => reviews
 }
 
@@ -18,17 +19,17 @@ const Mutation: MutationResolvers = {
 
 const resolvers: Resolvers = {
   User: {
-    pet: parent => pets.filter(pet => pet.ownerId === parent.id),
-    givenReviews: parent => reviews.filter(review => review.from === parent.id),
-    receivedReviews: parent => reviews.filter(review => review.to === parent.id)
+    pets: ({ id }) => filter(pets, { ownerId: id }),
+    givenReviews: ({ id }) => filter(reviews, { from: id }),
+    receivedReviews: ({ id }) => filter(reviews, { to: id })
   },
   Pet: {
-    owner: parent => users.find(user => user.id === parent.ownerId)
+    owner: ({ ownerId }) => find(users, { id: ownerId })
   },
   Review: {
-    users: parent => ({
-      from: users.find(user => user.id === parent.from),
-      to: users.find(user => user.id === parent.to)
+    users: ({ from, to }) => ({
+      from: find(users, { id: from }),
+      to: find(users, { id: to })
     })
   },
   Query,
