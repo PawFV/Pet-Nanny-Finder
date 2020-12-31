@@ -1,5 +1,4 @@
-import chalkColors from './chalkColors'
-const { yellow, cyan } = chalkColors()
+import { cyan, yellow } from 'chalk'
 
 export default function logServer(port: string | number) {
   console.log(
