@@ -8,7 +8,7 @@
     "dev": "concurrently --kill-others \"nodemon\" \"npm run codegen:ts-gql\" --names '.,codegen' --prefix-colors 'green,blue'",
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./ -o ./build",
     "gen:mock-data": "ts-node ./src/mocks/genData",
-    "codegen:ts-gql": "graphql-codegen -e -w ./src/graphql/typeDefs/*.ts"
+    "codegen": "graphql-codegen -e -w ./src/graphql/typeDefs/*.ts"
   },
   "dependencies": {
     "@graphql-codegen/typescript-mongodb": "^1.17.9",
