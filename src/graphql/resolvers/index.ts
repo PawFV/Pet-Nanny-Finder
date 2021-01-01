@@ -3,6 +3,7 @@ import petMutation from './pets/petMutations'
 import petQuery from './pets/petQueries'
 import petResolvers from './pets/petResolvers'
 import reviewsMutation from './reviews/reviewsMutations'
+import reviewsQuery from './reviews/reviewsQueries'
 import reviewsResolvers from './reviews/reviewsResolvers'
 import userMutation from './users/userMutations'
 import userQuery from './users/userQueries'
@@ -10,7 +11,7 @@ import userResolvers from './users/userResolvers'
 
 const Query: QueryResolvers = {
   ...userQuery,
-  ...reviewsMutation,
+  ...reviewsQuery,
   ...petQuery
 }
 
