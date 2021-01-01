@@ -6,9 +6,10 @@ export default new ApolloServer({
   playground: true,
   typeDefs,
   resolvers,
-  context: ({ req }: { req: any }) => {
+  context: ({ req }) => {
+    // @ts-ignore TODO: extend request types to allow user.
     const { user } = req
-    console.log('user', user)
+
     return { user }
   }
 })
