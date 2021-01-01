@@ -15,8 +15,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": ["node_modules/@types", "./src/*.d.ts"]
+    "typeRoots": ["node_modules/@types", "./src/*.d.ts", "./src/@types"]
   },
-  "include": ["src/**/*.ts", "config/**/*.ts", "src/TS/db.d.ts"],
+  "include": ["src/**/*.ts", "config/**/*.ts"],
   "exclude": ["node_modules"]
 }
