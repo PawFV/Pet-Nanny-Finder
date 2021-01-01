@@ -1,4 +1,4 @@
-import { MutationResolvers, QueryResolvers, Resolvers } from '@/utils/codegen/graphql'
+import { MutationResolvers, QueryResolvers, Resolvers } from '@/@types/graphql'
 import petMutation from './pets/petMutations'
 import petQuery from './pets/petQueries'
 import petResolvers from './pets/petResolvers'

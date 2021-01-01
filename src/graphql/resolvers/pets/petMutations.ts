@@ -1,4 +1,4 @@
-import { MutationResolvers } from '@/utils/codegen/graphql'
+import { MutationResolvers } from '@/@types/graphql'
 import pets from '../../../database/pets.json'
 
 const petMutation: MutationResolvers = {

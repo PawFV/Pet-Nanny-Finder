@@ -1,4 +1,4 @@
-import { User } from '@/utils/codegen/graphql'
+import { User } from '@/@types/graphql'
 import { address, internet, phone, random } from 'faker'
 import { AvatarGenerator } from 'random-avatar-generator'
 const avatar = new AvatarGenerator()

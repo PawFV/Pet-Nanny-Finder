@@ -1,4 +1,4 @@
-import { Resolvers } from '@/utils/codegen/graphql'
+import { Resolvers } from '@/@types/graphql'
 import { filter } from 'lodash'
 import pets from '../../../database/pets.json'
 import reviews from '../../../database/reviews.json'

@@ -1,4 +1,4 @@
-import { QueryResolvers } from '@/utils/codegen/graphql'
+import { QueryResolvers } from '@/@types/graphql'
 import { find } from 'lodash'
 import users from '../../../database/users.json'
 

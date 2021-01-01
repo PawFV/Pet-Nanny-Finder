@@ -1,4 +1,4 @@
-import { QueryResolvers } from '@/utils/codegen/graphql'
+import { QueryResolvers } from '@/@types/graphql'
 import pets from '../../../database/pets.json'
 
 const petQuery: QueryResolvers = {

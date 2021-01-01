@@ -1,4 +1,4 @@
-import { User } from '@/utils/codegen/graphql'
+import { User } from '@/@types/graphql'
 import { lorem, random } from 'faker'
 import { Review } from '../../utils/codegen/graphql'
 
