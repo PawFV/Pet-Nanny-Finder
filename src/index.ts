@@ -1,4 +1,3 @@
-/// <reference types="./global" />
 import config from './config/index'
 import logServer from './utils/log/logServer'
 
