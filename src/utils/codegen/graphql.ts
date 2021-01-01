@@ -22,10 +22,42 @@ export type Scalars = {
 
 
 
+export type Query = {
+  __typename?: 'Query';
+  login?: Maybe<User>;
+  pets?: Maybe<Array<Maybe<Pet>>>;
+  review: Review;
+  reviews?: Maybe<Array<Review>>;
+  user?: Maybe<User>;
+  users?: Maybe<Array<Maybe<User>>>;
+};
+
+
+export type QueryLoginArgs = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
+
+export type QueryReviewArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryUserArgs = {
+  id: Scalars['ID'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
-  createUser?: Maybe<User>;
   createPet?: Maybe<Pet>;
+  createUser?: Maybe<User>;
+  register?: Maybe<User>;
+};
+
+
+export type MutationCreatePetArgs = {
+  pet?: Maybe<PetInput>;
 };
 
 
@@ -36,8 +68,15 @@ export type MutationCreateUserArgs = {
 };
 
 
-export type MutationCreatePetArgs = {
-  pet?: Maybe<PetInput>;
+export type MutationRegisterArgs = {
+  input: RegisterInput;
+};
+
+export type RegisterInput = {
+  email: Scalars['String'];
+  username: Scalars['String'];
+  password: Scalars['String'];
+  password2: Scalars['String'];
 };
 
 export type Pet = {
@@ -60,25 +99,6 @@ export type PetInput = {
   type: Scalars['String'];
   description: Scalars['String'];
   image: Scalars['String'];
-};
-
-export type Query = {
-  __typename?: 'Query';
-  users?: Maybe<Array<Maybe<User>>>;
-  user?: Maybe<User>;
-  pets?: Maybe<Array<Maybe<Pet>>>;
-  reviews?: Maybe<Array<Review>>;
-  review: Review;
-};
-
-
-export type QueryUserArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryReviewArgs = {
-  id: Scalars['ID'];
 };
 
 export type Destinies = {
@@ -200,13 +220,14 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Mutation: ResolverTypeWrapper<{}>;
+  Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  Pet: ResolverTypeWrapper<Pet>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
+  Mutation: ResolverTypeWrapper<{}>;
+  RegisterInput: RegisterInput;
+  Pet: ResolverTypeWrapper<Pet>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   PetInput: PetInput;
-  Query: ResolverTypeWrapper<{}>;
   Destinies: ResolverTypeWrapper<Destinies>;
   Review: ResolverTypeWrapper<Review>;
   GeoLocation: ResolverTypeWrapper<GeoLocation>;
@@ -217,13 +238,14 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Mutation: {};
+  Query: {};
   String: Scalars['String'];
-  Pet: Pet;
   ID: Scalars['ID'];
+  Mutation: {};
+  RegisterInput: RegisterInput;
+  Pet: Pet;
   Int: Scalars['Int'];
   PetInput: PetInput;
-  Query: {};
   Destinies: Destinies;
   Review: Review;
   GeoLocation: GeoLocation;
@@ -267,9 +289,19 @@ export type MapDirectiveArgs = {   path: Scalars['String']; };
 
 export type MapDirectiveResolver<Result, Parent, ContextType = any, Args = MapDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
+export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  login?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryLoginArgs, 'email' | 'password'>>;
+  pets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Pet']>>>, ParentType, ContextType>;
+  review?: Resolver<ResolversTypes['Review'], ParentType, ContextType, RequireFields<QueryReviewArgs, 'id'>>;
+  reviews?: Resolver<Maybe<Array<ResolversTypes['Review']>>, ParentType, ContextType>;
+  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryUserArgs, 'id'>>;
+  users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
+};
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'name' | 'email' | 'password'>>;
   createPet?: Resolver<Maybe<ResolversTypes['Pet']>, ParentType, ContextType, RequireFields<MutationCreatePetArgs, never>>;
+  createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateUserArgs, 'name' | 'email' | 'password'>>;
+  register?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationRegisterArgs, 'input'>>;
 };
 
 export type PetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pet'] = ResolversParentTypes['Pet']> = {
@@ -283,14 +315,6 @@ export type PetResolvers<ContextType = any, ParentType extends ResolversParentTy
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   image?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
-  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<QueryUserArgs, 'id'>>;
-  pets?: Resolver<Maybe<Array<Maybe<ResolversTypes['Pet']>>>, ParentType, ContextType>;
-  reviews?: Resolver<Maybe<Array<ResolversTypes['Review']>>, ParentType, ContextType>;
-  review?: Resolver<ResolversTypes['Review'], ParentType, ContextType, RequireFields<QueryReviewArgs, 'id'>>;
 };
 
 export type DestiniesResolvers<ContextType = any, ParentType extends ResolversParentTypes['Destinies'] = ResolversParentTypes['Destinies']> = {
@@ -330,9 +354,9 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type Resolvers<ContextType = any> = {
+  Query?: QueryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Pet?: PetResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
   Destinies?: DestiniesResolvers<ContextType>;
   Review?: ReviewResolvers<ContextType>;
   GeoLocation?: GeoLocationResolvers<ContextType>;
